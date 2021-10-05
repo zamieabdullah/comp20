@@ -1,0 +1,19 @@
+songlist {
+    background-color: #d1d1e0;
+    font-family: "Comic Sans MS", Arial;
+}
+
+heading, id, name, artist, genre, releaseYear {
+    display: block;
+}
+
+heading {
+    font-size: 48px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #3399ff;
+}
+
+song {
+    padding: 10px;
+}

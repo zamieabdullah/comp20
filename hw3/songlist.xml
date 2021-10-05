@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="./songlist.css"?>
+<!DOCTYPE songlist>
+
+<songlist>
+    <heading>Zamie's SongsList</heading>
+
+    <song>
+        <id>1</id>
+        <name>Held Me Down</name>
+        <artist>Nav</artist>
+        <genre>Rap</genre>
+        <releaseYear>2017</releaseYear>
+    </song>
+
+     <song>
+        <id>2</id>
+        <name>Two Late</name>
+        <artist>Kid Travis</artist>
+        <genre>Pop</genre>
+        <releaseYear>2021</releaseYear>
+    </song>
+
+     <song>
+        <id>3</id>
+        <name>Nostalgico</name>
+        <artist>Rauw Alejandro</artist>
+        <genre>Spanish Pop</genre>
+        <releaseYear>2021</releaseYear>
+    </song>
+
+     <song>
+        <id>4</id>
+        <name>Todo de Ti</name>
+        <artist>Rauw Alejandro</artist>
+        <genre>Spanish Pop</genre>
+        <releaseYear>2021</releaseYear>
+    </song>
+
+     <song>
+        <id>5</id>
+        <name>Wanted You</name>
+        <artist>Nav</artist>
+        <genre>Rap</genre>
+        <releaseYear>2018</releaseYear>
+    </song>
+
+     <song>
+        <id>6</id>
+        <name>All My Love</name>
+        <artist>Ariana Grande</artist>
+        <genre>Pop</genre>
+        <releaseYear>2014</releaseYear>
+    </song>
+
+     <song>
+        <id>7</id>
+        <name>Cold Water</name>
+        <artist>Justin Beiber</artist>
+        <genre>Pop</genre>
+        <releaseYear>2016</releaseYear>
+    </song>
+
+     <song>
+        <id>8</id>
+        <name>Akh Mastani</name>
+        <artist>Ezu</artist>
+        <genre>Bollywood</genre>
+        <releaseYear>2021</releaseYear>
+    </song>
+
+     <song>
+        <id>9</id>
+        <name>Icy Ivy</name>
+        <artist>Who-Ya Extended</artist>
+        <genre>J-Pop</genre>
+        <releaseYear>2021</releaseYear>
+    </song>
+
+     <song>
+        <id>10</id>
+        <name>0 (zero)</name>
+        <artist>LMYK</artist>
+        <genre>J-Pop</genre>
+        <releaseYear>2021</releaseYear>
+    </song>
+
+</songlist>
