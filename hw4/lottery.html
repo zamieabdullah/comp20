@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Lottery</title>
+    </head>
+    <body style="text-align: center">
+        <h1>Lottery</h1>
+        <script type="text/javascript">
+            document.write("<h3>This is the winning number</h3>")
+            var lottery = [];
+            for (let i = 0; i < 5; i++) {
+                let number = Math.floor(Math.random() * 47 + 1);
+                lottery.push(number);
+                document.write(number + "<br\>");
+            }
+
+            var lucky_num = Math.floor(Math.random() * 17 + 1);
+            lottery.push(lucky_num);
+            document.write(lucky_num + "<br\><hr\>");
+
+            // var prompt()
+        </script>
+    </body>
+</html>
