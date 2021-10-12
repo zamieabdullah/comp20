@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Joe's Hotdog Stand!</title>
+        <script
+          src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+          crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        <script type="text/javascript">
+            function food(name, cost) {
+                this.name = name;
+                this.cost = cost
+            }
+            
+            foods = new Array(
+                new food("Hot Dogs", 3.75),
+                new food("French Fries", 2.00),
+                new food("Soda", 1.50)
+            )
+            
+            function choose(name, minRange, maxRange) {
+                var choices = "";
+                  quantities = [0, 1, 2, 3, 4, 5, 10, 15, 20];
+                choices = "<select id='" + name + "' size='1'>";
+                for (i = minRange; i <= maxRange; i++)
+                   choices += "<option>" + quantities[i] + "</option>";
+                choices += "</select>"; 
+                return choices;
+            }
+        
+            $(document).ready(function() {
+                $(document).on('submit', '#receipt', function() {
+                  let tot_amount = 0;
+                  let subtotal = 0;      
+                  
+                  var receipt_tag = document.createElement("h1");
+                  var r_text = document.createTextNode("Receipt");
+                  receipt_tag.appendChild(r_text);
+                  var element = document.getElementById("log");
+                  element.appendChild(receipt_tag);
+                  
+                  
+                  for (let i = 0; i < foods.length; i++) {
+                      let tr = $('.itemtable tr').eq(i+1);
+                      let selected_amount = tr.find(':selected').text();
+                      tot_amount += parseInt(selected_amount);
+                      subtotal += (selected_amount * foods[i].cost)
+                      let items_tag = document.createElement("p");
+                      let item = document.createTextNode(foods[i].name + ": " + selected_amount);
+                      items_tag.appendChild(item);
+                      element.appendChild(items_tag);
+                      // document.write("<p>" + foods[i].name + ": " + selected_amount + "<\p>")
+                  }
+                  
+                  if (subtotal >= 20)
+                      subtotal = subtotal * .9
+                  
+                  
+                  let price_tag = document.createElement("p");
+                  let price = document.createTextNode("Subtotal: $" + subtotal.toFixed(2));
+                  price_tag.appendChild(price);
+                  element.appendChild(price_tag);
+                  
+                  var total = subtotal * (1.0625);
+                  var taxed = total - subtotal;
+                  
+                  let tax_tag = document.createElement("p");
+                  let tax = document.createTextNode("Tax: $" + taxed.toFixed(2));
+                  tax_tag.appendChild(tax);
+                  element.appendChild(tax_tag);
+                  
+                  let total_tag = document.createElement("p");
+                  let finish = document.createTextNode("Total: $" + total.toFixed(2));
+                  total_tag.appendChild(finish);
+                  element.appendChild(total_tag);
+                  
+                  return false;
+                 });
+            });
+        </script>
+        
+        <div style="text-align: center;">
+            <h1>Joe's Hotdog Stand</h1>
+            <form id="receipt">
+                <table class="itemtable" border="0" cellpadding="3">
+                        <tr>
+                            <th>Select Item</th>
+                            <th>Item Name</th>
+                            <th>Cost Each</th>
+                        </tr>
+                        <script language="javascript">
+                          var s = "";
+                          for (let i = 0; i < foods.length; i++)
+                          {
+                        	  s += "<tr><td>";
+                        	  s += choose("quan" + i, 0, 8);
+                        	  s += "</td><td>" + foods[i].name + "</td>";
+                        	  s += "<td> $ " + foods[i].cost.toFixed(2) + "</td>";
+                          }
+                          document.writeln(s);
+                        </script>
+                </table>
+                <input style="float: left; margin: 10px;" type="submit">
+            </form>
+            <div id="log"></div>
+        </div>
+    </body>
+</html>
