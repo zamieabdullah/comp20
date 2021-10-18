@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lottery</title>
+    </head>
+    <body>
+        <h1>Lottery</h1>
+        <script type="text/javascript">
+            document.write("The winning numbers of the day are <br/>");
+            var winning_nums = [];
+            for (let i = 0; i < 5; i++) {
+                let num = Math.floor(Math.random() * 47 + 1);
+                winning_nums.push(num);
+            }
+            
+            winning_nums.sort((a,b) => a-b);
+            
+            for (let i = 0; i < 5; i++) {;
+                document.write(winning_nums[i] + " ");
+            }
+            document.write("<br/>");
+            
+            var lucky_num = Math.floor(Math.random() * 17 + 1);
+            document.write("Lucky number: " + lucky_num + "<hr>");
+            
+            var client_nums = prompt("Choose five numbers out of 48");
+            var client_num_array = client_nums.split(" ").slice(0, 5).sort((a,b) => a-b);
+            
+            document.write("Your numbers are <br/>");
+            
+            for (let i = 0; i < 5; i++) {
+                document.write(client_num_array[i] + " ");
+            }
+            
+            document.write("<br/>");
+            
+            var client_luck = prompt("Choose one lucky number out of 18");
+            document.write("Lucky number: " + client_luck + "<hr>");
+            
+            let match = 0;
+            let luck_found = false;
+            
+            for (let i = 0; i < 5; i++) {
+                for (let j = 0; j < 5; j++) {
+                    if (parseInt(winning_nums[i]) === parseInt(client_num_array[j])) {
+                        match++;
+                    }
+                }
+            }
+            
+            document.write("Matches: " + match + "<br/>");
+            if (parseInt(lucky_num) === parseInt(client_luck)) {
+                luck_found = true;
+                document.write("Lucky number matched <br/>");
+            } else {
+                document.write("Lucky number not matched <br/>");
+            }
+            
+            if (match === 0 && luck_found === true) {
+                document.write("You won $4 <br/>");
+            } else if (match === 1 && luck_found === true) {
+                document.write("You won $6 <br/>");
+            } else if (match === 2 && luck_found === false) {
+                document.write("You won $3 <br/>");
+            } else if (match === 2 && luck_found === true) {
+                document.write("You won $25 <br/>");
+            } else if (match === 3 && luck_found === false) {
+                document.write("You won $20 <br/>");
+            } else if (match === 3 && luck_found === true) {
+                document.write("You won $150 <br/>");
+            } else if (match === 4 && luck_found === false) {
+                document.write("You won $200 <br/>");
+            } else if (match === 4 && luck_found === true) {
+                document.write("You won $5000 <br/>");
+            } else if (match === 5 && luck_found === false) {
+                document.write("You won $25000 a YEAR for LIFE <br/>");
+            } else if (match === 5 && luck_found === true) {
+                document.write("You won $7000 a WEEK for LIFE <br/>");
+            }
+        </script>
+    </body>
+</html>
