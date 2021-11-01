@@ -1,0 +1,62 @@
+[
+    {
+    "name": "Held Me Down",
+    "artist": ["Nav"],
+    "genre": "Rap",
+    "year": "2017"
+    },
+    {
+    "name": "Two Late",
+    "artist": ["Kid Travis"],
+    "genre": "Pop",
+    "year": "2021"
+    },
+    {
+    "name": "Nostalgico",
+    "artist": ["Rauw Alejandro", "Chris Brown"],
+    "genre": "Spanish Pop",
+    "year": "2021"
+    },
+    {
+    "name": "Todo de Ti",
+    "artist": ["Rauw Alejandro"],
+    "genre": "Spanish Pop",
+    "year": "2021"
+    },
+    {
+    "name": "Wanted you",
+    "artist": ["Nav"],
+    "genre": "Rap",
+    "year": "2018"
+    },
+    {
+    "name": "All My Love",
+    "artist": ["Ariana Grande", "Major Lazer"],
+    "genre": "Pop",
+    "year": "2014"
+    },
+    {
+    "name": "Cold Water",
+    "artist": ["Justin Beiber", "Major Lazer"],
+    "genre": "Pop",
+    "year": "2016"
+    },
+    {
+    "name": "Akh Mastani",
+    "artist": ["Ezu"],
+    "genre": "Bollywood",
+    "year": "2021"
+    },
+    {
+    "name": "Icy Ivy",
+    "artist": ["Who-Ya Extended"],
+    "genre": "J-Pop",
+    "year": "2021"
+    },
+    {
+    "name": "0 (zero)",
+    "artist": ["LMYK"],
+    "genre": "J-Pop",
+    "year": "2021"
+    }
+]
