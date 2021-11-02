@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JSON Song List</title>
+    	  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script>
+            function getData() {
+                var request = new XMLHttpRequest();
+                
+                request.open("GET", "https://raw.githubusercontent.com/zamieabdullah/comp20/main/hw9/song_list.json", true);
+
+                request.onreadystatechange = function() {
+                    if ((request.readyState == 4) && (request.status == 200)) {
+                        data = request.responseText;
+                        json = JSON.parse(data);
+                        
+                        document.getElementById("jsondata").innerHTML = data;
+                        print(json);
+                        
+                        let arr = json.map(song => song.genre);
+                        let opts = [...new Set(arr)];
+                        str = "<option>Select a genre</option>";
+                        opts.forEach(elem => str += "<option>" + elem + "</option>");
+                        document.getElementById("filter").innerHTML = str;
+                    }
+                };
+                
+                request.send();
+            }
+            
+            function print(json) {
+                let str = "<ul style='list-style-type:none'>";
+                json.forEach((song) => { 
+                    str += "<li>" + song.name + "</li>";
+                    str += "<li>Artist: " + song.artist + "</li>";
+                    str += "<li>Genre: " + song.genre + "</li>";
+                    str += "<li>Released " + song.year + "</li><br/>";
+                }) 
+                str += "</ul>";
+                document.getElementById("data").innerHTML = str;
+            }
+            
+            function filter_song() {
+                let selected_genre = $('select').find(':selected').text();
+                                 
+                let filtered = json.filter(function(song) {
+                    return song.genre == selected_genre;
+                })
+                
+                print(filtered);
+            }
+        </script>
+    </head>
+    <body onload="getData()" style="text-align: center">
+        <div id="jsondata" ></div>
+        <form>
+            <select id="filter" style="margin-bottom: 50px; margin-top: 50px"></select>
+            <input type="button" value="Select Genre" onclick="filter_song()">
+        </form>
+        <div id="data"></div>
+    </body>
+</html>
