@@ -1,0 +1,5 @@
+Link: 
+
+Question: 
+1. The hardest part was looking and choosing an API. The satisfying part was 
+   being able to see it actually display text on the html.

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Api Fun: Music Genre Generator</title>
+    	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script>
+            function getGenre() {
+                var request = new XMLHttpRequest();
+                
+                request.open("GET", "https://binaryjazz.us/wp-json/genrenator/v1/genre/", true);
+
+                request.onreadystatechange = function() {
+                    if ((request.readyState == 4) && (request.status == 200)) {
+                        data = request.responseText;
+                        document.getElementById("genre").innerHTML = data;
+                    }
+                };
+               
+                request.send();
+            }
+        </script>
+    </head>
+    <body onload="getGenre()" style="text-align: center">
+        Heres a suggestion of what you can listen to next: <div id="genre"></div>
+        
+        <div>
+            <ul style='list-style-type:none'>
+                <li>The API returns random music genres.</li>
+                <li>The API can be found at https://binaryjazz.us/genrenator-api/</li>
+                <li>There are two tow options for the API. One of them being a genre generator (which I chose) and another being a story generator.</li>
+                <li>This API would be helpful for a website that would like to generate a different genre for their clients to listen to on every single day. </li>
+            </ul>
+        </div>
+    </body>
+</html>
