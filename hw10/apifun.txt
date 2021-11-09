@@ -1,4 +1,4 @@
-Link: 
+Link: https://zamieabdullah.github.io/comp20/hw10/apifun.html
 
 Question: 
 1. The hardest part was looking and choosing an API. The satisfying part was 

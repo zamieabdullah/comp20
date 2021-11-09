@@ -1,0 +1,22 @@
+Zamie Abdullah
+SQL Practice
+COMP20
+11/08/2021
+
+Part 1:
+1. SELECT CompanyName, ContactName, ContactTitle FROM customers;
+2. SELECT * FROM suppliers WHERE Country="Germany";
+3. SELECT FirstName, LastName FROM employees WHERE year(BirthDate) >= 1960;
+4. SELECT ProductName, UnitPrice FROM products WHERE UnitPrice >= 10 AND UnitPrice <= 20 DESC;
+
+Part 2:
+1. SELECT DISTINCT Country FROM customers;
+2. SELECT ProductName, UnitPrice FROM products WHERE SupplierID BETWEEN 9 AND 15 ORDER BY SupplierID;
+3. SELECT ProductName, UnitPrice FROM products WHERE CategoryName LIKE '%Dairy%' OR CategoryName LIKE '%Meat%';
+4. SELECT * FROM products WHERE QuantityPerUnit LIKE '%bottles%' OR QuantityPerUnit LIKE '%jars%';
+5. SELECT * FROM products WHERE employees WHERE Title LIKE '%sales%' ORDER BY LastName;
+
+Part 3:
+1. SELECT * FROM products INNER JION Categories ON products.CategoryID=Categories.CategoryID WHERE CategoryName='Beverages';
+2. SELECT ProductName, CompanyName FROM products INNER JOIN suppliers ON products.SupplierID=suppliers.SupplierID WHERE CompanyName in ("Mayumi's", "Leka Trading");
+3. SELECT ProductName, CompanyName FROM products INNER JOIN suppliers ON products.SupplierID=suppliers.SupplierID WHERE UnitPrice < 10 AND Country='US';
